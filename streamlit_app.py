@@ -20,7 +20,7 @@ pd_df = my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 #st.stop
 
-pd_df = my_dataframe.to_pandas()
+pd_df1 = my_dataframe.to_pandas()
 ingredients_list = st.multiselect(
     "Choose upto 5 ingredients",
     pd_df["FRUIT_NAME"].tolist(),

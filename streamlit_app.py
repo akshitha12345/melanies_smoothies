@@ -14,10 +14,13 @@ session = cnx.session();
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
+pd_df = my_dataframe.to_pandas()
 ingredients_list = st.multiselect(
     "Choose upto 5 ingredients",
-    my_dataframe["fruit_name"].to_list(), max_selections = 5
+    pd_df["FRUIT_NAME"].tolist(),
+    max_selections=5
 )
+
 if ingredients_list:
     ingredients_string = ''
     for fruit_chosen in ingredients_list:
